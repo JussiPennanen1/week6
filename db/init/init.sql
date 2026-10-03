@@ -1,0 +1,8 @@
+CREATE DATABASE IF NOT EXISTS appdb;
+CREATE USER IF NOT EXISTS 'appuser'@'%' IDENTIFIED BY 'placeholder_password';
+GRANT ALL PRIVILEGES ON appdb.* TO 'appuser'@'%';
+FLUSH PRIVILEGES;
+
+USE appdb;
+CREATE TABLE IF NOT EXISTS visits (id INT PRIMARY KEY, count INT);
+INSERT IGNORE INTO visits (id, count) VALUES (1, 0);
